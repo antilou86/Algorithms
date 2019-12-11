@@ -3,8 +3,18 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  batches = 0
+  
+  for i in ingredients:
+    for r in recipe:
+      if i.keys() == r.keys():
+        x = i[i.keys()] / r[r.keys()]
+        if x > batches:
+          batches = x
+          print("batches deep in the loop-de-loops: ", batches)
+  return batches
 
+      
 
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
