@@ -3,8 +3,16 @@
 import argparse
 
 def find_max_profit(prices):
-  pass
-
+  #receive an array of prices.
+  #check each price for max and each for minimum
+  minimum_buy = sorted(prices)[0]
+  max_sell = sorted(prices)[-1]
+  print("sorted array: ", sorted(prices))
+  #profit starts at zero. buy subtracts minimum from profit. sell adds maximum to profit.
+  profit = 0 - minimum_buy + max_sell
+  
+  return profit
+  
 
 if __name__ == '__main__':
   # This is just some code to accept inputs from the command line
