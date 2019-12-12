@@ -10,22 +10,74 @@ def eating_cookies(n, cache=None):
   # if i have a total number (n)
   # and we can only remove 1 or 2 or 3 at a time
   # how many combinations of removing 1, or, 2 or 3, until it hits 0 exist?
+  # will need a counter to track the number of solutions.
+  # may need counters (multiples?) to track the number of times 1-2-or-3 is removed from the total
+  # loop (if im looping) would have to stop when n reaches zero.
+  # n should always be divisable by one?
 
-  # no matter what N is, n will always be one of the answers. 1 cookie, n times. 
-  # we can also do 1 cookie (n - 2) times, and 2 cookies 1 time. 
-  # similarly 1 cookie (n - 3) times, and 3 cookies 1 time. 
-  # also 1 cookie (n - 5) times, and 3 cookies + 2 cookies 1 time each.
-  # if n is divisable by three, we can eat 3 cookies (n/3) times.
-  # if n is divisable by two, we can eat 2 cookies (n/2) times.
+  # theoretically  
+ '''
+ lets say n=10
 
+ our answer would count possible combinations of 1, 2, 3 that add up to 10.
+ it can be visualized as
 
-  if n < 1:
-    return 1
-  else:
-    original_n = n
+ [1,1,1,1,1,1,1,1,1,1]
+ [1,2,1,1,1,1,1,1,1]
+ [1,2,2,1,1,1,1,1]
+ [1,2,2,2,1,1,1]
+ [1,2,2,2,2,1]
+ [1,2,2,3,1]
+ [1,2,2,3,2]
+ [1,2,3,1,1,1,1]
+ [1,2,3,2,1,1]
+ [1,2,3,2,2]
+ [1,2,3,3,1]
+ [1,3,1,1,1,1,1,1]
+ [1,3,2,1,1,1,1]
+ [1,3,2,2,1,1]
+ [1,3,2,2,2]
+ [1,3,2,3,1]
+ [1,3,2,3,]
+ [1,3,3,1,1,1]
+ [1,3,3,2,1]
+ [1,3,3,3]
+ [2,1,1,1,1,1,1,1,1]
+ [2,2,1,1,1,1,1,1]
+ [2,3,1,1,1,1,1]
 
-    next_n = n 
-  pass
+ '''
+ 
+  # you get the picture
+  '''
+  so begin with 1,
+  append 1 to an array, repeat n-1 times.
+
+  then 2,
+  append 2 to the array, repeat n/2-2 times
+
+  then 3,
+  append 3, repeat n/3-3 times
+  if anything left over append 1 until the sum is n
+
+  '''
+
+  # simplify the problem
+  # how many ways can we eat n cookies if we can eat only 1 or 2 at a time?
+  # well, if it were only 1 at a time, we could only eat them in 1 way.
+  # if it's one or two at a time we can eat the items in eight ways (assuming n is 5)
+  # 
+  '''
+  [1,1,1,1,1]
+  [1,2,1,1]
+  [1,1,2,1]
+  [1,1,1,2]
+  [1,2,2]
+  [2,1,1,1,1]
+  [2,2,1]
+  [2,1,2]
+  
+  '''
 
 if __name__ == "__main__":
   if len(sys.argv) > 1:
