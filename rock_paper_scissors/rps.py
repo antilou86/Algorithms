@@ -3,7 +3,7 @@
 import sys
 
 def rock_paper_scissors(n):
-    #defines a play
+    #defines a play/move
     plays = ["rock", "paper", "scissors"]
     #establishes an array to return the outcomes
     outcomes = []
@@ -19,10 +19,6 @@ def rock_paper_scissors(n):
     helper_func(n)
     #returns the end result
     return outcomes
-        
-
-      
-
 
 if __name__ == "__main__":
   if len(sys.argv) > 1:
