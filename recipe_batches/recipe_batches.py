@@ -3,16 +3,17 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  batches = 0
-  
-  for i in ingredients:
-    for r in recipe:
-      if i.keys() == r.keys():
-        x = i[i.keys()] / r[r.keys()]
-        if x > batches:
-          batches = x
-          print("batches deep in the loop-de-loops: ", batches)
-  return batches
+  batches = []
+  if len(ingredients) < len(recipe):
+    batches.append(0)
+  else:
+    for i in ingredients:
+      for r in recipe:
+        if i == r:
+          x = ingredients[i] // recipe[r]
+          batches.append(x)
+
+  return sorted(batches)[0]
 
       
 
